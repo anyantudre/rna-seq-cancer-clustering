@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://colab.research.google.com/github/anyantudre/RNA-Seq-Pan-Cancer-Clustering-for-Tumor-Identification/blob/main/clustering-rna-seq-avec-k-means-et-dbscan.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a>
+  <a href="https://colab.research.google.com/github/anyantudre/rna-seq-cancer-clustering/blob/main/clustering-rna-seq-avec-k-means-et-dbscan.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a>
   <img src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white" alt="Python 3.12">
   <img src="https://img.shields.io/badge/scikit--learn-K--means%20%7C%20DBSCAN-F7931E?logo=scikitlearn&logoColor=white" alt="scikit-learn">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></a>
@@ -35,10 +35,10 @@ The labels are only used at the end, to check the clusters. The data files are n
 
 ## Approach
 
-1. **Dimensionality reduction.** PCA down to 30 components, then t-SNE (2D and 3D) on those 30 components for the plots.
-2. **K-means.** Runs for k = 2 to 7, the elbow method (Yellowbrick and `KneeLocator`) for k = 1 to 14, and the silhouette score for k = 2 to 10.
-3. **DBSCAN.** A grid over `eps` (1 to 150) and `min_samples` (3, 5, 8) on the 30 PCA components, then `eps` estimated from the knee of a 5-nearest-neighbour distance plot.
-4. **Comparison.** K-means clusters, DBSCAN clusters and the real tumour types side by side, in PCA and t-SNE space.
+1. Reduce the data with PCA to 30 components, then run t-SNE (2D and 3D) on those 30 components for the plots.
+2. Run K-means for k = 2 to 7, with the elbow method (Yellowbrick and `KneeLocator`) for k = 1 to 14 and the silhouette score for k = 2 to 10.
+3. Run DBSCAN over a grid of `eps` (1 to 150) and `min_samples` (3, 5, 8) on the 30 PCA components, then estimate `eps` from the knee of a 5-nearest-neighbour distance plot.
+4. Put the K-means clusters, DBSCAN clusters and real tumour types side by side, in PCA and t-SNE space.
 
 ## Results
 
